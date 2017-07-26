@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Dashboard</title>
+      <link rel="stylesheet" type="text/css" href="css/toggle-switch-rem.css">
+      <link rel="stylesheet" type="text/css" href="css/normalizer.css">
+      <link rel="stylesheet" type="text/css" href="css/main.css">
+      <meta name="viewport" content="width=device-with, initial-scale=1.0">
+   </head>
+   <body>
+      <header>
+         <h1 class="m-title">D<span class="name">board</span><span class="trade">&trade;</span></h1>
+         <div class="icons">
+            <div class="notes">
+               <img class="bell" src="icons/icon-bell.svg" alt="bell-icon">
+               <span class="new-note"></span>
+            </div>
+            <span class="avatar"></span>
+            <p>Emerson Gonzalez</p>
+         </div>
+      </header>
+      <nav>
+         <div class="mobilenav">
+            <ul class="ul-mobile">
+               <li class="icon-select icon-selected">
+                  <a href="#dashboard" class="dash-icon"></a>
+               </li>
+               <li class="icon-select">
+                  <a href="#membrs" class="memb-icon"></a>
+               </li>
+               <li class="icon-select">
+                  <a href="#visits" class="visits-icon"></a>
+               </li>
+               <li class="icon-select">
+                  <a href="#sett" class="setts-icon"></a>
+               </li>
+            </ul>
+         </div>
+         <a href="javascript:void(0)" class="icon">
+            <div class="hamburger">
+               <div class="menui top-menu"></div>
+               <div class="menui mid-menu"></div>
+               <div class="menui bottom-menu"></div>
+            </div>
+         </a>
+      </nav>
+      <main>
+         <div class="menu-desk">
+            <ul class="ul-desk">
+               <li class="icon-select icon-selected">
+                  <a href="#dashboard" class="dash-icon"></a>
+               </li>
+               <li class="icon-select">
+                  <a href="#membrs" class="memb-icon"></a>
+               </li>
+               <li class="icon-select">
+                  <a href="#visits" class="visits-icon"></a>
+               </li>
+               <li class="icon-select">
+                  <a href="#sett" class="setts-icon"></a>
+               </li>
+            </ul>
+         </div>
+         <div class="m-container">
+            <h1 class="title">Dashboard</h1>
+            <div class="searchcon">
+               <h1 class="title-desk">Dashboard</h1>
+               <div class="search-bar">
+                  <input type="search" placeholder="search">
+                  <button class="search-btn"></button>
+               </div>
+            </div>
+            <ul class="notifications">
+               <li class="alert"><span>Alert</span> Isabella Acker commented on Facebook...<img class="close" src="icons/close.svg" alt="close-button"></li>
+            </ul>
+            <div id="dashboard" class="charbuttons">
+               <h1 class="h">TRAFFIC</h1>
+               <div class="buttonscon">
+                  <button type="button" class="charbtn" id="hourlybtn">Hourly</button>
+                  <button type="button" class="charbtn" id="dailybtn">Daily</button>
+                  <button type="button" class="charbtn" id="weeklybtn">Weekly</button>
+                  <button type="button" class="charbtn" id="monthlybtn">Monthly</button>
+               </div>
+            </div>
+            <div class="charts">
+               <canvas id="hourly"></canvas>
+               <canvas id="daily"></canvas>
+               <canvas id="weekly"></canvas>
+               <canvas id="monthly"></canvas>
+            </div>
+            <div class="sec2">
+               <div class="canvas-cont">
+                  <div class="barcon">
+                     <div class="t-canvas">
+                        <h1 class="h">DAILY TRAFFIC</h1>
+                     </div>
+                     <div class="barchart">
+                        <canvas id="bar"></canvas>
+                     </div>
+                  </div>
+               </div>
+               <div class="canvas-cont">
+                  <div class="t-canvas">
+                     <h1 class="h">Mobile Users</h1>
+                  </div>
+                  <div class="dnutcon" id="visits">
+                     <div class="dcanvas">
+                        <canvas id="dnut"></canvas>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="stats">
+               <h1 class="h">Social Stats</h1>
+               <div class="stats-main">
+                  <div class="social-con">
+                     <div class="circle"><img class="social-icons" src="icons/icon-twitter.svg" alt="twitter-icon">
+                     </div>
+                     <div class="statcon">
+                        <h1 class="soc-head">Twitter</h1>
+                        <span>17,890</span>
+                     </div>
+                  </div>
+                  <div class="social-con">
+                     <div class="circle">
+                        <img  class="social-icons-2" src="icons/icon-facebook.svg" alt="facebook-icon">
+                     </div>
+                     <div class="statcon">
+                        <h1 class="soc-head">Facebook</h1>
+                        <span>12,205</span>
+                     </div>
+                  </div>
+                  <div class="social-con">
+                     <div class="circle">
+                        <img  class="social-icons" src="icons/icon-google-plus.svg" alt="googleplus-icon">
+                     </div>
+                     <div class="statcon">
+                        <h1 class="soc-head">Google+</h1>
+                        <span>11,708</span>  
+                     </div>
+                  </div>
+                  <div class="social-con">
+                     <div class="circle">
+                        <img  class="social-icons-2" src="icons/instagram.svg" alt="instagram-icon">
+                     </div>
+                     <div class="statcon">
+                        <h1 class="soc-head">Instagram</h1>
+                        <span>14,447</span>  
+                     </div>
+                  </div>
+                  <div class="social-con">
+                     <div class="circle">
+                        <img  class="social-icons-2" src="icons/tumblr.svg" alt="tumblr-icon">
+                     </div>
+                     <div class="statcon">
+                        <h1 class="soc-head">Tumblr</h1>
+                        <span>9,457</span>  
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="mbuttons" id="membrs">
+               <button class="m-but" id="nmembersbut">new members</button>
+               <button class="m-but" id="ractivitybut">Recent Activity</button>
+            </div>
+            <div class="members-section">
+               <div class="members" id="members">
+                  <h2>New Members</h2>
+                  <ul class="user-con">
+                     <li class="user">
+                        <span>    
+                        <img class="user-avatar" src="img/u1.jpg" alt="useravatar">
+                        </span>
+                        <div class="user-info">
+                           <div class="g1">
+                              <p><span class="user-name">Isabella Acker</span></p>
+                              <a href="mailto:isbellaac@gmail.com">isbellaac@gmail.com</a>
+                           </div>
+                           <div class="g2">
+                              <p>7/8/16</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="user">
+                        <span>    
+                        <img class="user-avatar" src="img/u2.jpg" alt="useravatar">
+                        </span>
+                        <div class="user-info">
+                           <div class="g1">
+                              <p><span class="user-name">Charles Elkins</span></p>
+                              <a href="mailto:charlesel@gmail.com">charlesel@gmail.com</a>
+                           </div>
+                           <div class="g2">
+                              <p>7/10/16</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="user">
+                        <span>    
+                        <img class="user-avatar" src="img/u3.jpg" alt="useravatar">
+                        </span>
+                        <div class="user-info">
+                           <div class="g1">
+                              <p><span class="user-name">Layla Fischer</span></p>
+                              <a href="mailto:lfischer2@hotmail">lfischer2@hotmail.com</a>
+                           </div>
+                           <div class="g2">
+                              <p>8/11/16</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="user">
+                        <span>    
+                        <img class="user-avatar" src="img/u4.jpg" alt="useravatar">
+                        </span>
+                        <div class="user-info">
+                           <div class="g1">
+                              <p><span class="user-name">James Rogers</span></p>
+                              <a href="mailto:rogersj@yahoo.com">rogersj@yahoo.com</a>
+                           </div>
+                           <div class="g2">
+                              <p>7/8/16</p>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <div class="r-activity" id="activity-sec">
+                  <h2>Recent Activity</h2>
+                  <ul class="user-con">
+                     <li class="user">
+                        <span>    
+                        <img class="user-avatar" src="img/u1.jpg" alt="useravatar">
+                        </span>
+                        <div class="user-info">
+                           <div class="g1">
+                              <span class="user-name">Isabella Acker</span>
+                              <p>Commented on Facebook's changes for 2016</p>
+                              <span class="comment-icon"></span>
+                              <p>1 hour ago</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="user">
+                        <span>    
+                        <img class="user-avatar" src="img/u2.jpg" alt="useravatar">
+                        </span>
+                        <div class="user-info">
+                           <div class="g1">
+                              <span class="user-name">Charles Elkins</span> 
+                              <p>Made a post on Facebook</p>
+                              <span class="post-icon"></span>          
+                              <p>20 minutes ago</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="user">
+                        <span>    
+                        <img class="user-avatar" src="img/u3.jpg" alt="useravatar">
+                        </span>
+                        <div class="user-info">
+                           <div class="g1">
+                              <span class="user-name">Layla Fischer</span>
+                              <p>Just joined Twitter.</p>
+                              <span class="twitter-icon "></span>
+                              <p>7 hours ago</p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="user">
+                        <span>    
+                        <img class="user-avatar" src="img/u4.jpg" alt="useravatar">
+                        </span>
+                        <div class="user-info">
+                           <div class="g1">
+                              <span class="user-name">James Rogers</span>
+                              <p>Likes Bsn's news post.
+                              <p><span class="like-icon"></span>
+                              <p>12 hours ago</p>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="gear-con" id="sett">
+               <img class="gear" id="gear" src="icons/gear.svg" alt="gear">
+               <img class="cancel" id="cancel" src="icons/cancel.svg" alt="cancel-icon">
+            </div>
+            <div class="sec3">
+               <div class="subsec3">
+                  <div class="messagecon" id="messagecon">
+                     <h1 class="h">Message User</h1>
+                     <form method="post">
+                        <input id="s-user" type="text" placeholder="Search for user" name="searchuser">
+                        <span class="val-user"></span>           
+                        <textarea id="m-user" placeholder="Message user"></textarea>
+                        <span class="val-msj"></span>
+                        <input type="submit" id="submit" value="Send">
+                     </form>
+                  </div>
+               </div>
+               <div class="subsec3" id="subsec3">
+                  <div class="settings" id="settings">
+                     <h1 class="h">Settings</h1>
+                     <label class="switch-light switch-ios" onclick="">
+                     <input type="checkbox">
+                     <strong>
+                     Send Email notifications
+                     </strong>
+                     <span class="set-btn" aria-hidden="true">
+                     <span>Off</span>
+                     <span>On</span>
+                     <a></a>
+                     </span>
+                     </label>
+                     <label class="switch-light switch-ios" onclick="">
+                     <input type="checkbox">
+                     <strong>
+                     Set profile to public          
+                     </strong>
+                     <span class="set-btn" aria-hidden="true">
+                     <span>Off</span>
+                     <span>On</span>
+                     <a></a>
+                     </span>
+                     </label>
+                     <div class="timezone">
+                        <select id="timezone" name="timezone" required>
+                           <option value="" disabled selected>Select Timezone</option>
+                           <option value="-12" >(GMT -12:00) Eniwetok, Kwajalein</option>
+                           <option value="-11" >(GMT -11:00) Midway Island, Samoa</option>
+                           <option value="-10" >(GMT -10:00) Hawaii</option>
+                           <option value="-9"  >(GMT -9:00) Alaska</option>
+                           <option value="-8"  >(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+                           <option value="-7"  >(GMT -7:00) Mountain Time (US &amp; Canada)</option>
+                           <option value="-6"  >(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
+                           <option value="-5"  >(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
+                           <option value="-4.5">(GMT -4:30) Caracas</option>
+                           <option value="-4"  >(GMT -4:00) Atlantic Time (Canada), La Paz, Santiago</option>
+                           <option value="-3.5">(GMT -3:30) Newfoundland</option>
+                           <option value="-3"  >(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
+                           <option value="-2"  >(GMT -2:00) Mid-Atlantic</option>
+                           <option value="-1"  >(GMT -1:00 hour) Azores, Cape Verde Islands</option>
+                           <option value="0"   >(GMT) Western Europe Time, London, Lisbon, Casablanca, Greenwich</option>
+                           <option value="1"   >(GMT +1:00 hour) Brussels, Copenhagen, Madrid, Paris</option>
+                           <option value="2"   >(GMT +2:00) Kaliningrad, South Africa, Cairo</option>
+                           <option value="3"   >(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
+                           <option value="3.5" >(GMT +3:30) Tehran</option>
+                           <option value="4"   >(GMT +4:00) Abu Dhabi, Muscat, Yerevan, Baku, Tbilisi</option>
+                           <option value="4.5" >(GMT +4:30) Kabul</option>
+                           <option value="5"   >(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
+                           <option value="5.5" >(GMT +5:30) Mumbai, Kolkata, Chennai, New Delhi</option>
+                           <option value="5.75">(GMT +5:45) Kathmandu</option>
+                           <option value="6"   >(GMT +6:00) Almaty, Dhaka, Colombo</option>
+                           <option value="6.5" >(GMT +6:30) Yangon, Cocos Islands</option>
+                           <option value="7"   >(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
+                           <option value="8"   >(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
+                           <option value="9"   >(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
+                           <option value="9.5" >(GMT +9:30) Adelaide, Darwin</option>
+                           <option value="10"  >(GMT +10:00) Eastern Australia, Guam, Vladivostok</option>
+                           <option value="11"  >(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
+                           <option value="12"  >(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
+                        </select>
+                        <div>
+                           <div class="sc-btns">
+                              <button class="save-btn">Save</button>
+                              <button class="cancel-btn">Cancel</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.bundle.js"></script> 
+      <script src="js/main.js"></script>
+   </body>
+</html>
