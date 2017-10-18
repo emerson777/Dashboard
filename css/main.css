@@ -99,6 +99,37 @@ h2 {
   /*  padding: 2px;  */
   display: block; }
 
+.success,
+.saved {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  color: #69C773;
+  text-align: center;
+  background: #69C773;
+  border-radius: 5px;
+  margin-bottom: 9px; }
+  @media (min-width: 1366px) {
+    .success,
+    .saved {
+      margin-bottom: 3px; } }
+
+.success p,
+.saved p {
+  color: #FFFFFF;
+  font-size: 1em; }
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -977,6 +1008,8 @@ select#timezone::-ms-expand {
     border-radius: 2px;
     opacity: 1; } }
 
+svg {
+  fill: yellow !important; }
 
 .top-animate {
   background: #FFFFFF !important;

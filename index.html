@@ -291,8 +291,20 @@
                <div class="subsec3">
                   <div class="messagecon" id="messagecon">
                      <h1 class="h">Message User</h1>
-                     <form method="post">
-                        <input id="s-user" type="text" placeholder="Search for user" name="searchuser">
+                     <div class="success"></div> 
+
+            
+          <form method="post">
+
+                        <input id="s-user" name="name" list="names" type="text" placeholder="Search for user">
+                        <datalist id="names">                
+                             <option value="Isabella Acker">
+                             <option value="Charles Elkins">
+                             <option value="Layla Fischer">
+                             <option value="James Rogers">
+                             <option value="Joel Goldberg">
+                             <option value="Carol Smith">                           
+                        </datalist>
                         <span class="val-user"></span>           
                         <textarea id="m-user" placeholder="Message user"></textarea>
                         <span class="val-msj"></span>
@@ -301,10 +313,12 @@
                   </div>
                </div>
                <div class="subsec3" id="subsec3">
+
                   <div class="settings" id="settings">
+                  <div class="saved"></div> 
                      <h1 class="h">Settings</h1>
                      <label class="switch-light switch-ios" onclick="">
-                     <input type="checkbox">
+                     <input id="ofbtn1" type="checkbox">
                      <strong>
                      Send Email notifications
                      </strong>
@@ -315,7 +329,7 @@
                      </span>
                      </label>
                      <label class="switch-light switch-ios" onclick="">
-                     <input type="checkbox">
+                     <input id="ofbtn2" type="checkbox">
                      <strong>
                      Set profile to public          
                      </strong>

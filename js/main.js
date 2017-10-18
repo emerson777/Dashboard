@@ -1,4 +1,11 @@
 window.onload = function(){
+
+var hourlyChart;
+var dailyChart;
+var weeklyChart;
+var monthlyChart;
+var barChrt;
+var dnutChart;
 const hourly = document.querySelector('#hourly');
 const daily = document.querySelector('#daily');
 const weekly = document.querySelector('#weekly');
@@ -31,6 +38,9 @@ const userField = document.querySelector('#s-user');
 const msjField = document.querySelector('#m-user');
 const userValCon = document.querySelector('.val-user');
 const msjValCon = document.querySelector('.val-msj');
+const sent = document.querySelector('.success');
+const clearBtn = document.querySelector('.cancel-btn');
+const saved = document.querySelector('.saved');
 
 
 daily.classList.add("hidden");
@@ -41,41 +51,52 @@ newMemberBtn.classList.add("selected");
 recentActivitySec.classList.add("recent-act-hide");
 settingsContainer.classList.add("hidden-sett");
 cancelBtn.classList.add("hide");
+sent.classList.add('hidden');
+saved.classList.add('hidden');
 
 
 
+sendButton.addEventListener('click', function(e){
+      e.preventDefault();
+      sent.classList.add('hidden');
 
- sendButton.addEventListener('click', function(e) {
-      
-      if (userField.value === '') {
-          e.preventDefault();
-          userValCon.innerHTML = '<p class="s-user-warning">This is required.</p>';
-          userField.classList.add('error');      
-         } else {
-            userField.classList.remove('error');
-            userValCon.innerHTML = '';
-           }
+     if (userField.value === '') {
+           userValCon.innerHTML = '<p class="s-user-warning">This is required.</p>';
+     } else {
+           userValCon.innerHTML = '';
 
-         if (msjField.value === '') {
-             e.preventDefault();
-             msjValCon.innerHTML = '<p class="s-user-warning">This is required.</p>';
-             msjField.classList.add('error');
-         } else {
-             msjField.classList.remove('error');
+     }
+        if (msjField.value === '') {
+            msjValCon.innerHTML = '<p class="s-user-warning">This is required.</p>';
+        } else {
              msjValCon.innerHTML = '';
-           }
- });
 
+        }
 
-bell.addEventListener('click', function(e) {
-    
-   for (let i = 0; i < msjs.length; i++) {      
-    notiContainer.innerHTML += '<li class="alert"><span>Alert</span> ' + msjs[i] + ' <img class="close" src="icons/close.svg"></li>';
-}
-       e.target.removeEventListener('click', arguments.callee);
-       notificationIcon.classList.add("hide");
+          if (userField.value !== '' && msjField.value !== '') {
+            userField.value = '';
+            msjField.value = '';
+            sent.classList.remove('hidden');
+            sent.innerHTML = '<p>Your message has been sent. Thank you!</p>';
+          }
 
 });
+
+
+
+
+const notes = function(){
+    for (let i = 0; i < msjs.length; i++) {      
+    notiContainer.innerHTML += '<li class="alert"><span>Alert</span> ' + msjs[i] + ' <img class="close" src="icons/close.svg"></li>';
+}
+  notificationIcon.classList.add('hide');
+  bell.removeEventListener('click', notes, false);
+
+};
+
+bell.addEventListener('click', notes, false);
+
+
 
 //CLOSE BUTTON
 notiContainer.addEventListener('click', function(e) {
@@ -146,7 +167,7 @@ cancelBtn.addEventListener('click', function() {
 
 
 
-var lineChart = new Chart(hourly, {
+hourlyChart = new Chart(hourly, {
   type: 'line',
   data: {
     labels: ["8:00am", "10:00am", "12:00pm", "2:00pm", "4:00pm"],
@@ -192,7 +213,7 @@ hourlybtn.addEventListener('click', function() {
 
 
 
-var lineChart = new Chart(daily, {
+dailyChart = new Chart(daily, {
   type: 'line',
   data: {
     labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
@@ -245,7 +266,7 @@ dailyBtn.addEventListener('click', function() {
 
 
 
-lineChart = new Chart(weekly, {
+weeklyChart = new Chart(weekly, {
   type: 'line',
   data: {
     labels: ["16-22", "23-29", "30-5", "6-12", "20-26", "27-3", "4-10", "11-17", "18-28"],
@@ -293,7 +314,7 @@ lineChart = new Chart(weekly, {
 });
 
 
-lineChart = new Chart(monthly, {
+monthlyChart = new Chart(monthly, {
   type: 'line',
   data: {
     labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September",
@@ -341,7 +362,7 @@ monthlyBtn.addEventListener("click", function () {
 
 
 
-var bar = new Chart(barChart, {
+barChrt = new Chart(barChart, {
     type: 'bar',
     data: {
     labels: ["Sun", "Mon", "Tus", "Wed", "Thur", "Fri", "Sat"],
@@ -375,7 +396,7 @@ var bar = new Chart(barChart, {
 
 
 
-var dnutChart = new Chart(dnut, {
+dnutChart = new Chart(dnut, {
     type: 'doughnut',
     data: {
     labels: ["Phones", "Tablets", "Desktop", "Notebooks"],
@@ -431,31 +452,37 @@ function margin() {
 window.addEventListener("hashchange", margin);
 
 
+if (localStorage) {
+    document.querySelector('.save-btn').addEventListener('click', function() {
+    const timeZ = document.querySelector('#timezone').value;
+    const onOffbtn = document.querySelector('#ofbtn1');
+    const onOffbtn2 = document.querySelector('#ofbtn2');
+         localStorage.setItem('timezone', timeZ);
+         localStorage.setItem('ofbtn1', onOffbtn.checked);
+         localStorage.setItem('ofbtn2', onOffbtn2.checked);
 
+          saved.classList.remove('hidden');
+          saved.innerHTML = '<p> Changes have been saved successfully!</p>';
+        
 
+    });
+}
 
+const timezone = localStorage.getItem('timezone');
+document.querySelector('#timezone').value = timezone;
 
- $(".icon").click(function() {
-    $(".mobilenav").fadeToggle(500);
-    $(".top-menu").toggleClass("top-animate");
-    $(".mid-menu").toggleClass("mid-animate");
-    $(".bottom-menu").toggleClass("bottom-animate");
-    $("body").toggleClass("noscroll");
-  });
+const onOff = JSON.parse(localStorage.getItem('ofbtn1'));
+document.querySelector('#ofbtn1').checked= onOff;
 
-
-
-
-$('.ul-mobile').click(function(){
-   
-  $(".mobilenav ").fadeToggle();
-     $(".top-menu").toggleClass("top-animate");
-    $(".mid-menu").toggleClass("mid-animate");
-    $(".bottom-menu").toggleClass("bottom-animate");
-     $("body").toggleClass("noscroll");
-
+const onOff2 = JSON.parse(localStorage.getItem('ofbtn2'));
+document.querySelector('#ofbtn2').checked= onOff2;
+ 
+  
+clearBtn.addEventListener('click', function() {
+    localStorage.clear();
+     saved.classList.remove( 'hidden' );
+    saved.innerHTML = '<p>Changes have been canceled successfully!</p>';
 });
-
 
 
 
